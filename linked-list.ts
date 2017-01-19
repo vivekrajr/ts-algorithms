@@ -1,7 +1,7 @@
 class LinkNode {
     data: number;
     next: LinkNode;
-
+    
     constructor(data: number) {
         this.data = data;
         this.next = null;
@@ -21,10 +21,12 @@ class SinglyLinkedList {
         this.head = null;
     }
 
+    // Adds a value to linked list
     public add(value: number) {
         let node = new LinkNode(value);
         let currentNode = this.head;
 
+        // If the currentNode is null, it means the list is empty
         if(!currentNode) {
             this.head = node;
             this._length++;
@@ -32,6 +34,7 @@ class SinglyLinkedList {
             return node;
         }
 
+        // Get the last node of the list
         while(currentNode.next) {
             currentNode = currentNode.next;
         }   
